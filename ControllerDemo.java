@@ -1,5 +1,7 @@
 package ProtoTypeDemo;
 
+import java.util.Scanner;
+
 public class ControllerDemo {
 
 /*	private char action;
@@ -24,13 +26,39 @@ public class ControllerDemo {
 
 	public void invokeseacrh(char action){
 		
+		Scanner s = new Scanner(System.in);
 		SearchFilesDemo sf1 = new SearchFilesDemo();
 		WriteFileDemo wf1 = new WriteFileDemo();
 		DeleteFileDemo df1 = new DeleteFileDemo();
+		DisplayFilesDemo ds1 = new DisplayFilesDemo();
+		int cnt = 0;
+		
+		do
+		{
+		
+		if(action == 'o' || cnt > 0){
+			
+			cnt++;
+			System.out.println("\nAdd File[a], Delete File[d], Search File[s], Exit[x]");
+			action = s.next().charAt(0);
+			
+		}
 		
 	    switch (action) {
 
-	      // Add file
+	    //Display Files
+	     case 'l':
+	    	 if(cnt == 0){
+	    		    		 
+	    	 ds1.Displayfiles();
+	    	 action = 'x';
+	    	 }
+	    	 else{
+	    		 System.out.println("Invalid Selection!");
+	    	 }
+	    	 break;
+	    
+	    // Add file
 	      case 'a':
 		//System.out.println("Not implemented");
 	    	  wf1.writefile();
@@ -57,7 +85,7 @@ public class ControllerDemo {
 	        break;
 	    }
 		
-		
+		}while (action != 'x');
 		
 		
 	}

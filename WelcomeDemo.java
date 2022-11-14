@@ -19,8 +19,10 @@ public class WelcomeDemo {
 				
 		do
 		{
-		System.out.println("\nAdd File[a], Delete File[d], Search File[s], Exit[x]");	
-		action = s.next().charAt(0);
+		//System.out.println("\nList Files[l], Add File[a], Delete File[d], Search File[s], Exit[x]");	
+			System.out.println("\nList Files[l], File Operations[o], Exit[x]");	
+			
+			action = s.next().charAt(0);
 		
 		ctl1.invokeseacrh(action);
 		
